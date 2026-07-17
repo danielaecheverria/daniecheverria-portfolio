@@ -139,7 +139,7 @@ CASES = [
         title="Cuída: making invisible work visible",
         summary="The mental load of running a household is real work, and nobody can see it. I designed an AI-native concept where tasks get carried by small creatures you can hand to someone else, so you can actually watch your load get lighter.",
         impact="Proof the enterprise rigour holds up on a warm, human problem.",
-        impact_todo="metric, Dani to supply",
+        impact_todo=None,
         card_media='<div class="frame">[ Load Bounce concept ]</div>',
     ),
 ]
@@ -503,7 +503,7 @@ def build_case_field_service():
 def build_case_cuida():
     tag = "Concept &middot; AI-native &middot; Consumer"
     h1 = "Cuída: making invisible work visible"
-    impact = f'A self-directed concept. Nobody asked for it.<br>{TODO.format("metric, Dani to supply")}'
+    impact = 'A self-directed concept. Nobody asked for it.'
     hero_media = figure_placeholder("Load Bounce concept", TODO.format("Dani to supply visuals from the existing Framer site"))
 
     body_html = '''<h2>Problem</h2>
