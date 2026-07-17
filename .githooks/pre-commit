@@ -1,0 +1,48 @@
+#!/bin/bash
+# Content-safety gate for daniecheverria.com, per BRIEF.md's HARD RULES.
+# Enabled via: git config core.hooksPath .githooks
+set -euo pipefail
+
+TEXT_EXT_RE='\.(html|css|js|py|md|txt|xml|svg)$'
+BANNED_NAMES='PopSAM|Copilot|First Pass|Multiverse|BEERS|NexRev|Wealthrock|Figma'
+BANNED_WORDS='\bleverage\b|\bseamless\b|\brobust\b|\bcrucial\b|\bpivotal\b|\bdelve\b|\btestament\b|\blandscape\b|\brealm\b|\btapestry\b'
+
+failed=0
+
+while IFS= read -r file; do
+  [[ "$file" =~ $TEXT_EXT_RE ]] || continue
+
+  content="$(git show ":$file" 2>/dev/null || true)"
+  [[ -z "$content" ]] && continue
+
+  if echo "$content" | grep -n "—" > /tmp/precommit_hits_$$ 2>/dev/null; then
+    echo "em dash found in $file:"
+    sed 's/^/    /' /tmp/precommit_hits_$$
+    failed=1
+  fi
+  rm -f /tmp/precommit_hits_$$
+
+  if echo "$content" | grep -niE "$BANNED_NAMES" > /tmp/precommit_hits_$$ 2>/dev/null; then
+    echo "banned internal/client name found in $file:"
+    sed 's/^/    /' /tmp/precommit_hits_$$
+    failed=1
+  fi
+  rm -f /tmp/precommit_hits_$$
+
+  if echo "$content" | grep -niE "$BANNED_WORDS" > /tmp/precommit_hits_$$ 2>/dev/null; then
+    echo "banned AI-sounding word found in $file:"
+    sed 's/^/    /' /tmp/precommit_hits_$$
+    failed=1
+  fi
+  rm -f /tmp/precommit_hits_$$
+done < <(git diff --cached --name-only --diff-filter=ACM)
+
+if [[ "$failed" -ne 0 ]]; then
+  echo ""
+  echo "Commit blocked. Fix the lines above (see BRIEF.md HARD RULES 1-3, 6)."
+  echo "Note: the client-name blocklist also includes the bare word \"Very,\" left out"
+  echo "of this automated check since it's an ordinary English word."
+  exit 1
+fi
+
+exit 0

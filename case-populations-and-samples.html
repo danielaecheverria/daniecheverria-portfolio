@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Populations and samples · Dani Echeverria</title>
+<meta name="description" content="Redesigning the population and sample workflow that ran a 12+ hour manual process outside the product on 100% of audits.">
+<link rel="canonical" href="https://daniecheverria.com/case-populations-and-samples.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ECE8DE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Populations and samples · Dani Echeverria">
+<meta property="og:description" content="Redesigning the population and sample workflow that ran a 12+ hour manual process outside the product on 100% of audits.">
+<meta property="og:url" content="https://daniecheverria.com/case-populations-and-samples.html">
+<meta property="og:image" content="https://daniecheverria.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Populations and samples · Dani Echeverria">
+<meta name="twitter:description" content="Redesigning the population and sample workflow that ran a 12+ hour manual process outside the product on 100% of audits.">
+<meta name="twitter:image" content="https://daniecheverria.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html">Dani Echeverria<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li class="hide-m"><a href="index.html#leadership">Leadership</a></li>
+        <li class="hide-m"><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="wrap"><p class="breadcrumb"><a href="index.html#work">&larr; Back to work</a></p></div>
+<section class="case-hero">
+    <div class="wrap">
+      <span class="mono case-tag">Audit workflow &middot; AI + automation</span>
+      <h1>The twelve hours that happened outside the product</h1>
+      <p class="impact">100% of audits &middot; a manual 12+ hour process, now automated &middot; the external ops team out of the loop entirely</p>
+      <div class="case-hero-media"><div class="frame"><img class="color" src="assets/diagrams/audit-workflow-before-after.svg" alt="Abstracted diagram comparing the population and sample workflow before and after the redesign, showing the process moving from spreadsheets and a separate ops team into the product."></div></div>
+    </div>
+  </section>
+<section style="padding-top:0">
+  <div class="wrap">
+    <article class="case-body">
+<h2>Problem</h2>
+      <p>Every audit needs populations and samples. The auditor requests a population, the customer provides it, a sample is pulled, the sample is tested. Simple in theory.</p>
+      <p>In practice: the auditor created a population request, received the full population, made files, and handed them to an ops team. Ops seeded the population, sampled it randomly in a spreadsheet, then uploaded the result back. The source of truth lived outside the product the whole time. Twelve-plus hours per audit, on 100% of audits, mostly manual, held together by a second team whose job was to be human middleware for a spreadsheet.</p>
+
+      <h2>What was actually broken</h2>
+      <p>Every user asked for something small. A fix here, a field there, an export. Each request was reasonable. Building them would have meant shipping a dozen patches onto a process that was never going to hold.</p>
+      <p>Four groups touched this process: leadership, the customer, the lead auditor, and the tester. Nobody owned the whole thing, so nobody could see the whole thing. That was the actual problem. Not a missing feature, a missing connection. The process had left the product, so nothing could stay true, and keeping it true was somebody's full time job.</p>
+
+      <h2>What I designed</h2>
+      <p>The auditor now creates samples directly from the population request. Samples stay connected to their sample requests. The database is the source of truth, so everything stays current without anyone maintaining it. Testing is automated, with AI where judgment helps and deterministic logic where it doesn't.</p>
+      <p>The interface had to serve four different people without becoming four different products. Leadership needs to see status. The customer needs to be asked once, clearly. The auditor needs control. The tester needs the work to be already done.</p>
+
+      <h2>The hard part</h2>
+      <p>The happy path was never the work. The work was every case that isn't: no population yet, resampling, samples shared across frameworks, functionality that no longer exists. Each has a different shape, and each one, left unhandled, sends the auditor straight back to the spreadsheet.</p>
+      <p>The hardest was multi-framework. Two audits running in parallel against different frameworks, drawing on overlapping evidence. The customer should only have to do the work once, because burdening them twice is how you lose their trust. But the auditor shouldn't have to absorb that complexity either, because absorbing it is how you lose the rigour. So the system holds the complexity instead of a person.</p>
+
+      <h2>My role</h2>
+      <p>I led the design end to end, in close partnership with the PM. We ran the research together: interviews, sessions with auditors and customers, and a map of how the process actually worked versus how it should. That map is where the project turned. I worked directly with engineering on the technical dependencies, because the fix was structural before it was visual. I designed the flows and the screens, we reviewed as a team, and I stayed on it after ship: user testing, correcting, adjusting as real audits ran through it.</p>
+
+      <h2>What changed</h2>
+      <p>Populations and samples now run inside the platform on 100% of audits. The manual work is automated. The ops team is out of the loop entirely. The source of truth is the product, which means it stays true on its own.</p>
+    </article>
+    <div class="case-gallery">
+      <figure>
+        <div class="frame"><img src="assets/images/flow-population-gathering-current.png" alt="Flow diagram of the current, largely manual population gathering process. Dense and intentionally illegible at this scale, since the density is the point."></div>
+        <figcaption>The current population gathering process. Illegible on purpose, the mess is what mattered.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="assets/images/flow-sample-gathering-current.png" alt="Flow diagram of the current, largely manual sample gathering process, running mostly outside the product in spreadsheets."></div>
+        <figcaption>The current sample gathering process, running outside the product.</figcaption>
+      </figure>
+    </div>
+    <div class="case-gallery">
+      <figure>
+        <div class="frame"><img src="assets/images/flow-workflow-future.png" alt="Flow diagram of the redesigned population and sample process running inside the product, with an actor key showing which of the four roles does what at each step."></div>
+        <figcaption>The resolution: one process, inside the product, with an actor key.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="assets/images/flow-auditor-future.png" alt="Flow diagram of the redesigned auditor workflow once populations and samples moved inside the product."></div>
+        <figcaption>The auditor's flow once the process moved inside the product.</figcaption>
+      </figure>
+    </div>
+    <div class="case-gallery">
+      <figure>
+        <div class="frame">[ Design exploration canvas ]</div>
+        <figcaption><span class="todo-flag">[TODO: awaiting relabel from Dani before this frame can publish]</span></figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="assets/diagrams/audit-workflow-screen-abstracted.svg" alt="Abstracted recreation of the resulting screen, showing samples created directly from the population request." class="color"></div>
+        <figcaption>What it became: an abstracted recreation of the shipped screen.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0">
+<div class="wrap">
+    <div class="case-footer-nav">
+      <a class="case-link" href="index.html#work">&larr; Back to work</a>
+      <a class="case-link" href="case-ai-governance.html">Next case study: Teaching a company to build AI it can defend <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 Dani Echeverria</span>
+    <span class="mono">Every pixel here was reviewed by a human. Several times.</span>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

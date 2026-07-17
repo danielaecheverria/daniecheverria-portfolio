@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The screens were the easy part · Dani Echeverria</title>
+<meta name="description" content="Designing an installation app for IoT hardware technicians working on sites with no connectivity, and getting three engineering teams to agree on what could go wrong.">
+<link rel="canonical" href="https://daniecheverria.com/case-field-service.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ECE8DE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The screens were the easy part · Dani Echeverria">
+<meta property="og:description" content="Designing an installation app for IoT hardware technicians working on sites with no connectivity, and getting three engineering teams to agree on what could go wrong.">
+<meta property="og:url" content="https://daniecheverria.com/case-field-service.html">
+<meta property="og:image" content="https://daniecheverria.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The screens were the easy part · Dani Echeverria">
+<meta name="twitter:description" content="Designing an installation app for IoT hardware technicians working on sites with no connectivity, and getting three engineering teams to agree on what could go wrong.">
+<meta name="twitter:image" content="https://daniecheverria.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html">Dani Echeverria<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li class="hide-m"><a href="index.html#leadership">Leadership</a></li>
+        <li class="hide-m"><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="wrap"><p class="breadcrumb"><a href="index.html#work">&larr; Back to work</a></p></div>
+<section class="case-hero">
+    <div class="wrap">
+      <span class="mono case-tag">Field service &middot; IoT &middot; Hardware + firmware</span>
+      <h1>The screens were the easy part</h1>
+      <p class="impact">The app is what let the hardware product ship. No app, no launch.<br><span class="todo-flag">[TODO: metric, Dani to supply]</span></p>
+      <div class="case-hero-media"><figure>
+        <div class="frame">[ The app in the field ]</div>
+        <figcaption><span class="todo-flag">[TODO: Dani to supply visuals]</span></figcaption>
+      </figure></div>
+    </div>
+  </section>
+<section style="padding-top:0">
+  <div class="wrap">
+    <article class="case-body">
+<h2>Problem</h2>
+      <p>From the outside this is a simple product. A technician installs a piece of hardware, the app confirms it worked. Three screens, maybe four.</p>
+      <p>Everything hard about it is invisible. The hardware talks to firmware, the firmware talks to software, and any of them can fail. And the technician is standing inside a building with no connectivity at all, which turns out to change the entire shape of the product.</p>
+
+      <h2>The thing that changed the design</h2>
+      <p>There's no signal on site. So the question was never a layout preference. It was: does the technician configure every device first and connect them all later, or do it one at a time? The honest answer is that it depends on the building, and the building doesn't ask us. So the app had to support both, without making the technician think about which mode they were in.</p>
+
+      <h2>Getting three teams to agree</h2>
+      <p>Hardware, software, and firmware each understood their own failure modes and quietly assumed the others had theirs covered. Nobody had written down a single list of what can go wrong.</p>
+      <p>I built a blueprint of every interaction the product needed, which surfaced the blockers nobody had named, and I got the three teams to align on one shared picture. That blueprint became the design. Every error state, how likely it was, whether the technician could recognise it, and whether they could fix it themselves or had to call for help. The interface stayed simple because the hard thinking happened somewhere else.</p>
+
+      <h2>What shipped</h2>
+      <p>The app was the gate on the hardware launch. It shipped, and the product went to market.</p>
+
+      <span class="todo-flag">[TODO: most technicians spoke Spanish, and there is a research story here about how that shaped the sessions. Dani has not yet confirmed whether she ran the research in Spanish herself or worked around the barrier. Do not write either version until she says which is true.]</span>
+    </article>
+    
+  </div>
+</section>
+<section style="padding-top:0">
+<div class="wrap">
+    <div class="case-footer-nav">
+      <a class="case-link" href="index.html#work">&larr; Back to work</a>
+      <a class="case-link" href="case-cuida.html">Next case study: Cuída: making invisible work visible <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 Dani Echeverria</span>
+    <span class="mono">Every pixel here was reviewed by a human. Several times.</span>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

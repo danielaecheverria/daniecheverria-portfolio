@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching a company to build AI it can defend · Dani Echeverria</title>
+<meta name="description" content="Writing the responsible AI patterns an audit product needed, then getting a design team and its leadership to actually use them.">
+<link rel="canonical" href="https://daniecheverria.com/case-ai-governance.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ECE8DE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Teaching a company to build AI it can defend · Dani Echeverria">
+<meta property="og:description" content="Writing the responsible AI patterns an audit product needed, then getting a design team and its leadership to actually use them.">
+<meta property="og:url" content="https://daniecheverria.com/case-ai-governance.html">
+<meta property="og:image" content="https://daniecheverria.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Teaching a company to build AI it can defend · Dani Echeverria">
+<meta name="twitter:description" content="Writing the responsible AI patterns an audit product needed, then getting a design team and its leadership to actually use them.">
+<meta name="twitter:image" content="https://daniecheverria.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html">Dani Echeverria<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li class="hide-m"><a href="index.html#leadership">Leadership</a></li>
+        <li class="hide-m"><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="wrap"><p class="breadcrumb"><a href="index.html#work">&larr; Back to work</a></p></div>
+<section class="case-hero">
+    <div class="wrap">
+      <span class="mono case-tag">Leadership &middot; AI patterns</span>
+      <h1>Teaching a company to build AI it can defend</h1>
+      <p class="impact">Patterns adopted across product teams &middot; shifted the leadership conversation from AI as a feature to AI as a capability<br><span class="todo-flag">[TODO: metric, Dani to supply]</span></p>
+      <div class="case-hero-media"><figure>
+        <div class="frame">[ Principle 1: Traceability by Default ]</div>
+        <figcaption><span class="todo-flag">[TODO: source slide awaiting a fix for em dashes before it can publish]</span></figcaption>
+      </figure></div>
+    </div>
+  </section>
+<section style="padding-top:0">
+  <div class="wrap">
+    <article class="case-body">
+<h2>Problem</h2>
+      <p>AI landed in the company strategy and teams started building straight away. Each one invented its own answer to the same questions. How much do we tell the user the model is guessing? Who checks it? What do we do when it's wrong?</p>
+      <p>In an audit product, those aren't UX questions. If the AI is confidently wrong and nobody can see how it got there, the customer is the one who has to answer for it. We were about to ship a dozen different answers to the same problem inside a product whose entire value is that people trust it.</p>
+
+      <h2>What I wrote</h2>
+      <p><strong>Principle 1: Traceability by default.</strong></p>
+      <p>Log every AI action and decision, with a description of what happened and why. Not just afterwards. During. If the model is reasoning, the user gets to watch it reason.</p>
+      <p>Show what was done, when, and why, in a form somebody can actually scan. Timestamped, summarised, no digging.</p>
+      <p>Build for review and recovery, not just for the compliance log. Someone will need to go back through the history, understand a decision, and undo it. Design for that person before they exist.</p>
+      <p>The rest of the patterns followed from the same instinct: human review at the points that carry consequences, and failure that degrades gracefully instead of guessing loudly.</p>
+
+      <h2>The harder part</h2>
+      <p>Writing patterns is the easy half. A pattern nobody uses is an opinion with a nice layout. So I ran workshops with the design team until the patterns were in their hands rather than in a document. I took it to leadership and argued that AI wasn't a feature we were adding, it was a capability that changed how we build. And I sat with product and engineering peers to get the patterns into real initiatives, because that's the only place they count.</p>
+
+      <h2>What changed</h2>
+      <p>Teams now start from a shared foundation instead of inventing one each time. Designers who were nervous about AI work have something to reach for. The leadership conversation moved from which features get AI to what AI changes about how we build.</p>
+    </article>
+    
+  </div>
+</section>
+<section style="padding-top:0">
+<div class="wrap">
+    <div class="case-footer-nav">
+      <a class="case-link" href="index.html#work">&larr; Back to work</a>
+      <a class="case-link" href="case-field-service.html">Next case study: The screens were the easy part <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 Dani Echeverria</span>
+    <span class="mono">Every pixel here was reviewed by a human. Several times.</span>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
