@@ -120,8 +120,8 @@ CASES = [
         tag="Leadership &middot; AI patterns",
         title="Teaching a company to build AI it can defend",
         summary="Teams started shipping AI features with no shared idea of what good looked like, inside a product whose entire value is that customers trust it. I wrote the patterns. Traceability by default, human review, graceful failure. Then I did the harder part, which was getting anyone to use them.",
-        impact="Gave a company shipping AI fast a shared definition of what responsible looks like, starting with traceability by default.",
-        impact_todo="metric, Dani to supply",
+        impact="Gave a company shipping AI fast a shared definition of what responsible looks like, starting with traceability by default. Presented company-wide, workshopped with a team of five designers.",
+        impact_todo=None,
         card_media='<div class="frame">[ Principle 1: Traceability by Default ]</div>',
     ),
     dict(
@@ -129,8 +129,8 @@ CASES = [
         tag="Field service &middot; IoT &middot; Hardware + firmware",
         title="The screens were the easy part",
         summary="An installation app for technicians working with IoT hardware. The brief was a few clean screens. What I found on site was different: no connectivity where the work happens, failures arriving from three places at once, and three engineering teams who each assumed the others had it covered. The real project was uncovering that, then designing around it.",
-        impact="The app is what let the hardware product ship. No app, no launch.",
-        impact_todo="metric, Dani to supply",
+        impact="The app is what let the hardware product ship. No app, no launch. The initial engagement led to a second one.",
+        impact_todo=None,
         card_media='<div class="frame">[ Error state matrix / the app in the field ]</div>',
     ),
     dict(
@@ -431,7 +431,7 @@ def build_case_populations():
 def build_case_ai_governance():
     tag = "Leadership &middot; AI patterns"
     h1 = "Teaching a company to build AI it can defend"
-    impact = f'Patterns adopted across product teams &middot; shifted the leadership conversation from AI as a feature to AI as a capability<br>{TODO.format("metric, Dani to supply")}'
+    impact = 'Patterns adopted across product teams &middot; shifted the leadership conversation from AI as a feature to AI as a capability. Presented company-wide to leadership, and workshopped directly with a team of five designers.'
     hero_media = figure_placeholder(
         "Principle 1: Traceability by Default",
         TODO.format("source slide awaiting a fix for em dashes before it can publish"),
@@ -469,7 +469,7 @@ def build_case_ai_governance():
 def build_case_field_service():
     tag = "Field service &middot; IoT &middot; Hardware + firmware"
     h1 = "The screens were the easy part"
-    impact = f'The app is what let the hardware product ship. No app, no launch.<br>{TODO.format("metric, Dani to supply")}'
+    impact = 'The app is what let the hardware product ship. No app, no launch. The initial engagement led to a second one.'
     hero_media = figure_placeholder("The app in the field", TODO.format("Dani to supply visuals"))
 
     body_html = f'''<h2>Problem</h2>
