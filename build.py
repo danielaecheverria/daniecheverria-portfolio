@@ -182,7 +182,7 @@ def build_home():
     <p class="lede">I've spent 10+ years designing inside complicated, high-stakes products. Right now that means AI-powered compliance and audit. What I actually do is work out what design should {handwriting("solve", "ink-solve")} before we start designing, then build the shortest honest path through it. With AI that path usually isn't a faster version of the old process, it's a different process, and knowing the difference is most of the job now. I also manage designers, which turned out to be the part I like most.</p>
     <div class="cta-row">
         <a class="btn primary" href="#work">See the work <span aria-hidden="true">&darr;</span></a>
-        <a class="btn ghost" href="{RESUME}">Download r&eacute;sum&eacute;</a>
+        <a class="btn ghost" href="{RESUME}">Download resume</a>
       </div>
     <p class="aside">Currently leading design for an AI-powered compliance and audit platform. Before that: insurance, field service, and enterprise product teams.</p>
   </div>
@@ -264,7 +264,7 @@ def build_home():
       <div class="links">
         <a class="btn primary" href="mailto:{EMAIL}">{EMAIL}</a>
         <a class="btn ghost" href="{LINKEDIN}">LinkedIn</a>
-        <a class="btn ghost" href="{RESUME}">R&eacute;sum&eacute;</a>
+        <a class="btn ghost" href="{RESUME}">Resume</a>
       </div>
     </div>
   </section>'''
