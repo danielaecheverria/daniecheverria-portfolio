@@ -184,7 +184,7 @@ def build_home():
         <a class="btn primary" href="#work">See the work <span aria-hidden="true">&darr;</span></a>
         <a class="btn ghost" href="{RESUME}">Download resume</a>
       </div>
-    <p class="aside">Currently leading design for an AI-powered compliance and audit platform. Before that: insurance, field service, and enterprise product teams.</p>
+    <p class="aside">Currently leading design for an AI-powered compliance and audit platform. Before that: IoT consultancy.</p>
   </div>
 </section>'''
 
