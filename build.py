@@ -250,7 +250,7 @@ def build_home():
           </ul>
         </div>
         <div class="about-photo">
-          <div class="frame">[ Your photo ]</div>
+          <div class="frame"><img src="assets/images/dani-photo.jpg" alt="Portrait of Dani Echeverria outdoors beside a river."></div>
           <p class="about-note">Yes, the loop up top is hand drawn. Some things shouldn't be automated.</p>
         </div>
       </div>
