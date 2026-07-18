@@ -505,7 +505,7 @@ def build_case_field_service():
 def build_case_cuida():
     tag = "Concept &middot; AI-native &middot; Consumer"
     h1 = "Cuída: making invisible work visible"
-    impact = 'A self-directed concept. Nobody asked for it.'
+    impact = 'Built during a product design course, on a problem I chose myself.'
     hero_media = '<div class="frame"><img class="color" src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members, plus insights, settings, and onboarding screens."></div>'
 
     body_html = '''<h2>Problem</h2>
@@ -517,7 +517,7 @@ def build_case_cuida():
       <p>Underneath the blobs are the same patterns I use in enterprise work: progressive disclosure, contextual memory, warm handoffs. The rigour is identical. The tone is not.</p>
 
       <h2>Why I made it</h2>
-      <p>Nobody asked me to. I'm a mom, this is my actual life, and I wanted to prove to myself that the same thinking I bring to a compliance audit works on a problem that runs on feeling rather than rules.</p>'''
+      <p>I built this during Become an AI Product Designer, a course that let me pick my own problem to solve. I chose this one because I'm a mom, this is my actual life, and I wanted to prove to myself that the same thinking I bring to a compliance audit works on a problem that runs on feeling rather than rules.</p>'''
 
     gallery_html = gallery([
         figure_img("assets/images/cuida-concept-board.webp",
