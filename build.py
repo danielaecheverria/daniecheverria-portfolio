@@ -140,7 +140,7 @@ CASES = [
         summary="The mental load of running a household is real work, and nobody can see it. I designed an AI-native concept where tasks get carried by small creatures you can hand to someone else, so you can actually watch your load get lighter.",
         impact="Proof the enterprise rigour holds up on a warm, human problem.",
         impact_todo=None,
-        card_media='<img src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members.">',
+        card_media='<img class="color" src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members.">',
     ),
 ]
 
@@ -506,7 +506,7 @@ def build_case_cuida():
     tag = "Concept &middot; AI-native &middot; Consumer"
     h1 = "Cuída: making invisible work visible"
     impact = 'A self-directed concept. Nobody asked for it.'
-    hero_media = '<div class="frame"><img src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members, plus insights, settings, and onboarding screens."></div>'
+    hero_media = '<div class="frame"><img class="color" src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members, plus insights, settings, and onboarding screens."></div>'
 
     body_html = '''<h2>Problem</h2>
       <p>Running a household is a job. Remembering the dentist, the shoe sizes, the birthday gift, the vaccine schedule. It's real cognitive work, it's distributed unequally, and it's invisible, which is exactly why it doesn't get shared. Task apps don't fix this. They give you a list, and a list is just the invisible work written down. It doesn't help you hand any of it away.</p>
@@ -522,7 +522,8 @@ def build_case_cuida():
     gallery_html = gallery([
         figure_img("assets/images/cuida-concept-board.webp",
                    "A concept exploration board mapping metaphors for sharing mental load, narrowing down to the final Load Bounce concept and its interaction model.",
-                   "Getting to Load Bounce: exploring metaphors before landing on the final concept."),
+                   "Getting to Load Bounce: exploring metaphors before landing on the final concept.",
+                   color=True),
     ], full=True)
 
     return case_page(
