@@ -131,7 +131,7 @@ CASES = [
         summary="An installation app for technicians working with IoT hardware. The brief was a few clean screens. What I found on site was different: no connectivity where the work happens, failures arriving from three places at once, and three engineering teams who each assumed the others had it covered. The real project was uncovering that, then designing around it.",
         impact="The app is what let the hardware product ship. No app, no launch. The initial engagement led to a second one.",
         impact_todo=None,
-        card_media='<div class="frame">[ Error state matrix / the app in the field ]</div>',
+        card_media='<img class="color" src="assets/diagrams/field-service-blueprint.png" alt="Swimlane blueprint mapping every interaction across the user flow, backend admin app, backend to hardware platform, and firmware and hardware layers.">',
     ),
     dict(
         slug="case-cuida.html",
@@ -140,7 +140,7 @@ CASES = [
         summary="The mental load of running a household is real work, and nobody can see it. I designed an AI-native concept where tasks get carried by small creatures you can hand to someone else, so you can actually watch your load get lighter.",
         impact="Proof the enterprise rigour holds up on a warm, human problem.",
         impact_todo=None,
-        card_media='<div class="frame">[ Load Bounce concept ]</div>',
+        card_media='<img src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members.">',
     ),
 ]
 
@@ -467,7 +467,7 @@ def build_case_field_service():
     tag = "Field service &middot; IoT &middot; Hardware + firmware"
     h1 = "The screens were the easy part"
     impact = 'The app is what let the hardware product ship. No app, no launch. The initial engagement led to a second one.'
-    hero_media = figure_placeholder("The app in the field", TODO.format("Dani to supply visuals"))
+    hero_media = '<div class="frame"><img class="color" src="assets/diagrams/field-service-blueprint.png" alt="Swimlane blueprint mapping every interaction across the user flow, backend admin app, backend to hardware platform, and firmware and hardware layers."></div>'
 
     body_html = f'''<h2>Problem</h2>
       <p>From the outside this is a simple product. A technician installs a piece of hardware, the app confirms it worked. Three screens, maybe four.</p>
@@ -483,9 +483,14 @@ def build_case_field_service():
       <h2>What shipped</h2>
       <p>The app was the gate on the hardware launch. It shipped, and the product went to market.</p>
 
-      {TODO.format("most technicians spoke Spanish, and there is a research story here about how that shaped the sessions. Dani has not yet confirmed whether she ran the research in Spanish herself or worked around the barrier. Do not write either version until she says which is true.")}'''
+      <h2>What user testing changed</h2>
+      <p>User testing surfaced something worth designing around: most of the technicians spoke Spanish. That was a good finding, not a problem. It pushed the design to be more picture-driven rather than text-heavy, and it put translation on the roadmap as a priority to add later.</p>'''
 
-    gallery_html = ""
+    gallery_html = gallery([
+        figure_img("assets/images/field-service-card-onboarding.png",
+                   "Card onboarding flow documentation showing the Bluetooth card connection screens, the UX goals for the flow, and the troubleshooting states when Bluetooth is off or unavailable.",
+                   "Card onboarding flow: connecting to the hardware over Bluetooth, with the recovery paths mapped alongside it."),
+    ], full=True)
 
     return case_page(
         title="The screens were the easy part · Dani Echeverria",
@@ -501,7 +506,7 @@ def build_case_cuida():
     tag = "Concept &middot; AI-native &middot; Consumer"
     h1 = "Cuída: making invisible work visible"
     impact = 'A self-directed concept. Nobody asked for it.'
-    hero_media = figure_placeholder("Load Bounce concept", TODO.format("Dani to supply visuals from the existing Framer site"))
+    hero_media = '<div class="frame"><img src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members, plus insights, settings, and onboarding screens."></div>'
 
     body_html = '''<h2>Problem</h2>
       <p>Running a household is a job. Remembering the dentist, the shoe sizes, the birthday gift, the vaccine schedule. It's real cognitive work, it's distributed unequally, and it's invisible, which is exactly why it doesn't get shared. Task apps don't fix this. They give you a list, and a list is just the invisible work written down. It doesn't help you hand any of it away.</p>
@@ -514,7 +519,11 @@ def build_case_cuida():
       <h2>Why I made it</h2>
       <p>Nobody asked me to. I'm a mom, this is my actual life, and I wanted to prove to myself that the same thinking I bring to a compliance audit works on a problem that runs on feeling rather than rules.</p>'''
 
-    gallery_html = ""
+    gallery_html = gallery([
+        figure_img("assets/images/cuida-concept-board.webp",
+                   "A concept exploration board mapping metaphors for sharing mental load, narrowing down to the final Load Bounce concept and its interaction model.",
+                   "Getting to Load Bounce: exploring metaphors before landing on the final concept."),
+    ], full=True)
 
     return case_page(
         title="Cuída: making invisible work visible · Dani Echeverria",
