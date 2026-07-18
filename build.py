@@ -113,7 +113,7 @@ CASES = [
         summary="Populations and samples run on every single audit, and the process took 12+ hours of manual work each time. Most of it happened in spreadsheets, handled by a separate ops team, outside the product entirely. I redesigned it so it lives inside the platform from start to finish.",
         impact="100% of audits &middot; a manual 12+ hour process, now automated &middot; the external ops team out of the loop entirely",
         impact_todo=None,
-        card_media=f'<img class="color" src="assets/diagrams/audit-workflow-before-after.svg" alt="Abstracted before and after diagram of the population and sample workflow moving out of spreadsheets and into the product.">',
+        card_media=f'<img src="assets/diagrams/audit-workflow-before-after.svg" alt="Abstracted before and after diagram of the population and sample workflow moving out of spreadsheets and into the product.">',
     ),
     dict(
         slug="case-ai-governance.html",
@@ -131,7 +131,7 @@ CASES = [
         summary="An installation app for technicians working with IoT hardware. The brief was a few clean screens. What I found on site was different: no connectivity where the work happens, failures arriving from three places at once, and three engineering teams who each assumed the others had it covered. The real project was uncovering that, then designing around it.",
         impact="The app is what let the hardware product ship. No app, no launch. The initial engagement led to a second one.",
         impact_todo=None,
-        card_media='<img class="color" src="assets/diagrams/field-service-blueprint.png" alt="Swimlane blueprint mapping every interaction across the user flow, backend admin app, backend to hardware platform, and firmware and hardware layers.">',
+        card_media='<img src="assets/diagrams/field-service-blueprint.png" alt="Swimlane blueprint mapping every interaction across the user flow, backend admin app, backend to hardware platform, and firmware and hardware layers.">',
     ),
     dict(
         slug="case-cuida.html",
@@ -140,7 +140,7 @@ CASES = [
         summary="The mental load of running a household is real work, and nobody can see it. I designed an AI-native concept where tasks get carried by small creatures you can hand to someone else, so you can actually watch your load get lighter.",
         impact="Proof the enterprise rigour holds up on a warm, human problem.",
         impact_todo=None,
-        card_media='<img class="color" src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members.">',
+        card_media='<img src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members.">',
     ),
 ]
 
@@ -316,17 +316,9 @@ def case_hero(tag, title, impact_html, media_html):
   </section>'''
 
 
-def figure_img(src, alt, caption, color=False):
-    cls = ' class="color"' if color else ''
+def figure_img(src, alt, caption):
     return f'''<figure>
-        <div class="frame"><img src="{src}" alt="{alt}"{cls}></div>
-        <figcaption>{caption}</figcaption>
-      </figure>'''
-
-
-def figure_placeholder(label, caption):
-    return f'''<figure>
-        <div class="frame">[ {label} ]</div>
+        <div class="frame"><img src="{src}" alt="{alt}"></div>
         <figcaption>{caption}</figcaption>
       </figure>'''
 
@@ -371,7 +363,7 @@ def build_case_populations():
     tag = "Audit workflow &middot; AI + automation"
     h1 = "The twelve hours that happened outside the product"
     impact = "100% of audits &middot; a manual 12+ hour process, now automated &middot; the external ops team out of the loop entirely"
-    hero_media = '<div class="frame"><img class="color" src="assets/diagrams/audit-workflow-before-after.svg" alt="Abstracted diagram comparing the population and sample workflow before and after the redesign, showing the process moving from spreadsheets and a separate ops team into the product."></div>'
+    hero_media = '<div class="frame"><img src="assets/diagrams/audit-workflow-before-after.svg" alt="Abstracted diagram comparing the population and sample workflow before and after the redesign, showing the process moving from spreadsheets and a separate ops team into the product."></div>'
 
     body_html = '''<h2>Problem</h2>
       <p>Every audit needs populations and samples. The auditor requests a population, the customer provides it, a sample is pulled, the sample is tested. Simple in theory.</p>
@@ -396,27 +388,17 @@ def build_case_populations():
       <p>Populations and samples now run inside the platform on 100% of audits. The manual work is automated. The ops team is out of the loop entirely. The source of truth is the product, which means it stays true on its own.</p>'''
 
     gallery_html = gallery([
-        figure_img("assets/images/flow-population-gathering-current.png",
-                   "Flow diagram of the current, largely manual population gathering process. Dense and intentionally illegible at this scale, since the density is the point.",
-                   "The current population gathering process. Illegible on purpose, the mess is what mattered."),
-        figure_img("assets/images/flow-sample-gathering-current.png",
-                   "Flow diagram of the current, largely manual sample gathering process, running mostly outside the product in spreadsheets.",
-                   "The current sample gathering process, running outside the product."),
-    ]) + "\n    " + gallery([
-        figure_img("assets/images/flow-workflow-future.png",
-                   "Flow diagram of the redesigned population and sample process running inside the product, with an actor key showing which of the four roles does what at each step.",
-                   "The resolution: one process, inside the product, with an actor key."),
-        figure_img("assets/images/flow-auditor-future.png",
-                   "Flow diagram of the redesigned auditor workflow once populations and samples moved inside the product.",
-                   "The auditor's flow once the process moved inside the product."),
-    ]) + "\n    " + gallery([
-        figure_placeholder("Design exploration canvas",
-                            f'{TODO.format("awaiting relabel from Dani before this frame can publish")}'),
+        figure_img("assets/diagrams/design-exploration-canvas.png",
+                   "Design exploration canvas showing early frame level experiments across custom samples, testing tables, and sub population scoping, before landing on the final workflow.",
+                   "Design exploration canvas: early frames before the final workflow."),
         figure_img("assets/diagrams/audit-workflow-screen-abstracted.svg",
                    "Abstracted recreation of the resulting screen, showing samples created directly from the population request.",
-                   "What it became: an abstracted recreation of the shipped screen.",
-                   color=True),
-    ])
+                   "What it became: an abstracted recreation of the shipped screen."),
+    ]) + "\n    " + gallery([
+        figure_img("assets/images/sample-record-prototype.png",
+                   "Prototype of a sample record review screen, showing the evidence upload flow, sample status, and related requirements panel.",
+                   "Prototype of the sample record screen, where evidence gets reviewed and attached."),
+    ], full=True)
 
     return case_page(
         title="Populations and samples · Dani Echeverria",
@@ -467,7 +449,7 @@ def build_case_field_service():
     tag = "Field service &middot; IoT &middot; Hardware + firmware"
     h1 = "The screens were the easy part"
     impact = 'The app is what let the hardware product ship. No app, no launch. The initial engagement led to a second one.'
-    hero_media = '<div class="frame"><img class="color" src="assets/diagrams/field-service-blueprint.png" alt="Swimlane blueprint mapping every interaction across the user flow, backend admin app, backend to hardware platform, and firmware and hardware layers."></div>'
+    hero_media = '<div class="frame"><img src="assets/diagrams/field-service-blueprint.png" alt="Swimlane blueprint mapping every interaction across the user flow, backend admin app, backend to hardware platform, and firmware and hardware layers."></div>'
 
     body_html = f'''<h2>Problem</h2>
       <p>From the outside this is a simple product. A technician installs a piece of hardware, the app confirms it worked. Three screens, maybe four.</p>
@@ -506,7 +488,7 @@ def build_case_cuida():
     tag = "Concept &middot; AI-native &middot; Consumer"
     h1 = "Cuída: making invisible work visible"
     impact = 'Built during a product design course, on a problem I chose myself.'
-    hero_media = '<div class="frame"><img class="color" src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members, plus insights, settings, and onboarding screens."></div>'
+    hero_media = '<div class="frame"><img src="assets/images/cuida-app-screens.avif" alt="Screenshots of the Cuida app: a load board showing tasks carried by small colour-coded blob characters split between household members, plus insights, settings, and onboarding screens."></div>'
 
     body_html = '''<h2>Problem</h2>
       <p>Running a household is a job. Remembering the dentist, the shoe sizes, the birthday gift, the vaccine schedule. It's real cognitive work, it's distributed unequally, and it's invisible, which is exactly why it doesn't get shared. Task apps don't fix this. They give you a list, and a list is just the invisible work written down. It doesn't help you hand any of it away.</p>
@@ -522,8 +504,7 @@ def build_case_cuida():
     gallery_html = gallery([
         figure_img("assets/images/cuida-concept-board.webp",
                    "A concept exploration board mapping metaphors for sharing mental load, narrowing down to the final Load Bounce concept and its interaction model.",
-                   "Getting to Load Bounce: exploring metaphors before landing on the final concept.",
-                   color=True),
+                   "Getting to Load Bounce: exploring metaphors before landing on the final concept."),
     ], full=True)
 
     return case_page(
