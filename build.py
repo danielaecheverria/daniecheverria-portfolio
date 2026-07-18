@@ -122,7 +122,7 @@ CASES = [
         summary="Teams started shipping AI features with no shared idea of what good looked like, inside a product whose entire value is that customers trust it. I wrote the patterns. Traceability by default, human review, graceful failure. Then I did the harder part, which was getting anyone to use them.",
         impact="Gave a company shipping AI fast a shared definition of what responsible looks like, starting with traceability by default. Presented company-wide, workshopped with a team of five designers.",
         impact_todo=None,
-        card_media='<div class="frame">[ Principle 1: Traceability by Default ]</div>',
+        card_media='<img src="assets/images/ai-principle-1-traceability.webp" alt="Slide describing Principle 1, Traceability by Default: log every AI action and decision, show what was done and when and why, and enable internal review, audits, and recovery.">',
     ),
     dict(
         slug="case-field-service.html",
@@ -432,10 +432,7 @@ def build_case_ai_governance():
     tag = "Leadership &middot; AI patterns"
     h1 = "Teaching a company to build AI it can defend"
     impact = 'Patterns adopted across product teams &middot; shifted the leadership conversation from AI as a feature to AI as a capability. Presented company-wide to leadership, and workshopped directly with a team of five designers.'
-    hero_media = figure_placeholder(
-        "Principle 1: Traceability by Default",
-        TODO.format("source slide awaiting a fix for em dashes before it can publish"),
-    )
+    hero_media = '<div class="frame"><img src="assets/images/ai-principle-1-traceability.webp" alt="Slide describing Principle 1, Traceability by Default: log every AI action and decision, show what was done and when and why, and enable internal review, audits, and recovery."></div>'
 
     body_html = '''<h2>Problem</h2>
       <p>AI landed in the company strategy and teams started building straight away. Each one invented its own answer to the same questions. How much do we tell the user the model is guessing? Who checks it? What do we do when it's wrong?</p>
